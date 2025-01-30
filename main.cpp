@@ -23,7 +23,7 @@ int main(void){
     Texture2D gun5 = LoadTexture("gun5.png");
     Texture2D gun6 = LoadTexture("gun6.png");
     Texture2D people = LoadTexture("people.png");
-
+    string instructions = "Press Space to do Russian Roulette";
     while(!WindowShouldClose()){
         if (IsKeyPressed(KEY_SPACE)){
             die.roll_dice();
@@ -32,6 +32,7 @@ int main(void){
         ClearBackground(WHITE);
 
         DrawTexture(people, 70, 100, WHITE);
+        DrawText(instructions.c_str(), 250, 900, 30, BLACK);
 
         
         if (die.side==0){
