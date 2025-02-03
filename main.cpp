@@ -23,6 +23,7 @@ int main(void){
     Texture2D gun5 = LoadTexture("gun5.png");
     Texture2D gun6 = LoadTexture("gun6.png");
     Texture2D people = LoadTexture("people.png");
+    Texture2D target = LoadTexture("target.png");
     string instructions = "Press Space to do Russian Roulette";
     while(!WindowShouldClose()){
         if (IsKeyPressed(KEY_SPACE)){
@@ -31,30 +32,37 @@ int main(void){
         BeginDrawing();
         ClearBackground(WHITE);
 
-        DrawTexture(people, 70, 100, WHITE);
+        DrawTexture(people, 0, 0, WHITE);
         DrawText(instructions.c_str(), 250, 900, 30, BLACK);
 
         
         if (die.side==0){
-        DrawTexture(gun, 70, 120, WHITE);    
+        DrawTexture(gun, 0, 20, WHITE); 
+           
         }
         else if (die.side==1){
-        DrawTexture(gun1, 70, 120, WHITE);    
+        DrawTexture(gun1, 0, 20, WHITE);
+        DrawTexture(target, 363, 17, WHITE);     
         }
         else if (die.side==2){
-        DrawTexture(gun2, 70, 120, WHITE);    
+        DrawTexture(gun2, 0, 20, WHITE);   
+        DrawTexture(target, 648, 180, WHITE);  
         }
         else if (die.side==3){
-        DrawTexture(gun3, 70, 120, WHITE);    
+        DrawTexture(gun3, 0, 20, WHITE); 
+        DrawTexture(target, 648, 405, WHITE);       
         }
         else if (die.side==4){
-        DrawTexture(gun4, 20, 120, WHITE);    
+        DrawTexture(gun4, -50, 20, WHITE);    
+        DrawTexture(target, 363, 545, WHITE); 
         }
         else if (die.side==5){
-        DrawTexture(gun5, 70, 120, WHITE);    
+        DrawTexture(gun5, 0, 20, WHITE);
+        DrawTexture(target, 45, 405, WHITE);    
         }
         else if (die.side==6){
-        DrawTexture(gun6, 70, 120, WHITE);    
+        DrawTexture(gun6, 0, 20, WHITE);
+        DrawTexture(target, 45, 180, WHITE);    
         }
         EndDrawing();    
 
